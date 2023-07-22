@@ -1,8 +1,9 @@
 import { useState, useEffect, useContext } from 'react';
 import { Form, Button, Container } from 'react-bootstrap';
-import { Navigate } from 'react-router-dom';
+import { Navigate, Link } from 'react-router-dom';
 import UserContext from '../UserContext';
 import Swal from 'sweetalert2';
+import  {FaPencilAlt}   from 'react-icons/fa';
 
 
 export default function Register() {
@@ -98,14 +99,15 @@ export default function Register() {
 	return (
 
 		(user.id !== null) ?
-			<Navigate to="/courses" />
+			<Navigate to="/products" />
 			:
-		<Container>
+		<Container className="Register-container">
 			<Form onSubmit={e => registerUser(e)}>
-			<h1 className="my=5 text-center">Register</h1>
+			<h1 className="my=5 text-center"><FaPencilAlt/> Register</h1>
+			<h5 className="my-3 text-center">All Fields marked with an asterisk (<span className="text-danger">*</span>) are required</h5>
 
 				<Form.Group className="mb-3" controlId="First Name">
-				  <Form.Label>First Name</Form.Label>
+				  <Form.Label>First Name <span className="text-danger">*</span></Form.Label>
 				  <Form.Control 
 				  type="text" 
 				  placeholder="Enter First Name" 
@@ -116,7 +118,7 @@ export default function Register() {
 				</Form.Group>
 
 				<Form.Group className="mb-3" controlId="Last Name">
-				  <Form.Label>Last Name</Form.Label>
+				  <Form.Label>Last Name <span className="text-danger">*</span></Form.Label>
 				  <Form.Control 
 				  type="text" 
 				  placeholder="Enter Last Name" 
@@ -127,7 +129,7 @@ export default function Register() {
 				</Form.Group>
 
 			    <Form.Group className="mb-3" controlId="Email address">
-			        <Form.Label>Email address</Form.Label>
+			        <Form.Label>Email address <span className="text-danger">*</span></Form.Label>
 			        <Form.Control 
 			        type="email" 
 			        placeholder="name@example.com" 
@@ -138,7 +140,7 @@ export default function Register() {
 			     </Form.Group>
 
 				<Form.Group className="mb-3" controlId="Password1">
-				  <Form.Label>Password</Form.Label>
+				  <Form.Label>Password <span className="text-danger">*</span></Form.Label>
 				  <Form.Control 
 				  type="password" 
 				  placeholder="Enter Password" 
@@ -149,7 +151,7 @@ export default function Register() {
 				</Form.Group>
 
 				<Form.Group className="mb-3" controlId="Password2">
-				  <Form.Label>Confirm Password</Form.Label>
+				  <Form.Label>Confirm Password <span className="text-danger">*</span></Form.Label>
 				  <Form.Control 
 				  type="password" 
 				  placeholder="Confirm Password" 
@@ -162,8 +164,9 @@ export default function Register() {
 				{
 				  isActive
 				 		? <Button variant="primary" type="submit" id="submitBtn">Submit</Button>
-				 		: <Button variant="danger" type="submit" id="submitBtn" disabled>Submit</Button>
+				 		: <Button variant="danger" type="submit" id="submitBtn" disabled>Please enter your registration details</Button>
 				}
+				<p className="text-center pt-3">Already have and account? <Link to="/login">Click here</Link> to log in.</p>
 
 			    </Form>
 			</Container>

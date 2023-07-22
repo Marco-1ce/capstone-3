@@ -1,20 +1,12 @@
-// Old practice of importing components
-// import Navbar from 'react-bootstrap/Navbar';
-// import Nav from 'react-bootstrap/Nav';
 
-
-// New practice in importing components/modules
-// We destructure our components to import them separately
-// import {Fragment} from 'react';
 import {useContext} from 'react';
 import {Navbar, Nav, Container} from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 import UserContext from '../UserContext';
+import  {FaUser, FaPencilAlt    }   from 'react-icons/fa';
 
 
 export default function AppNavbar() {
-
-	// const [user, setUser] = useState(localStorage.getItem("token"));
 
 	const{ user } = useContext(UserContext);
 
@@ -32,14 +24,14 @@ export default function AppNavbar() {
 		        <Navbar.Collapse id="basic-navbar-nav">
 		          <Nav className="ms-auto">
 		            <Nav.Link as={NavLink} to="/">Home</Nav.Link>
-		            <Nav.Link as={NavLink} to="/courses">Courses</Nav.Link>
+		            <Nav.Link as={NavLink} to="/products">Product</Nav.Link>
 		            
 		            {
 		              (user.id !== null) ?
 		              	  
 		              		(user.isAdmin) ?
 		              		<>
-			              	<Nav.Link as={NavLink} to="/addCourse">Add Course</Nav.Link>
+			              	<Nav.Link as={NavLink} to="/addProduct">Add Product</Nav.Link>
 			              	<Nav.Link as={NavLink} to="/logout">Logout</Nav.Link>
 			              	</>
 			              	 
@@ -53,8 +45,8 @@ export default function AppNavbar() {
 		              	
 		            	:
 		            	<>
-			            	<Nav.Link as={NavLink} to="/login">Login</Nav.Link>
-			            	<Nav.Link as={NavLink} to="/register">Register</Nav.Link>
+			            	<Nav.Link as={NavLink} to="/login"><FaUser/> Login</Nav.Link>
+			            	<Nav.Link as={NavLink} to="/register"><FaPencilAlt  /> Register</Nav.Link>
 			            </>
 		            }
 

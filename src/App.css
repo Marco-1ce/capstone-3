@@ -10,3 +10,93 @@
   min-height: 100%;
 }
 
+.Register-container{
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+
+Form label{
+  font-weight: bold;
+}
+
+#submitBtn {
+  width: 100%;
+  margin-top: 20px;
+}
+
+p a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
+
+.Login-Container{
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+
+.product-card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  border: none; 
+  padding: 10px;
+  margin: 10px;
+  width: 250px;
+  display: inline-block;
+}
+
+.product-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.product-description {
+  margin-bottom: 10px;
+}
+
+.product-price {
+  font-size: 18px;
+  color: green;
+  margin-bottom: 10px;
+}
+
+
+
+/* UserView.css */
+
+.product-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.view-details-button {
+  /* Customize the button styles as needed */
+  background-color: #007bff;
+  color: #fff;
+  font-weight: bold;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.view-details-button:hover {
+  background-color: #0056b3;
+}
+.button-container {
+  text-align: center; /* Align the button to the center */
+}
+

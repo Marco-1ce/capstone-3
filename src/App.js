@@ -4,8 +4,12 @@ import { BrowserRouter as Router} from 'react-router-dom';
 import { Route, Routes } from 'react-router-dom';
 import AppNavbar from './components/AppNavbar';
 
+import AddProduct from './pages/AddProduct'
+import Home from './pages/Home'
 import Login from './pages/Login';
 import Logout from './pages/Logout';
+import Products from './pages/Products';
+import ProductView from './pages/ProductView'
 import Register from './pages/Register';
 import './App.css';
 
@@ -72,15 +76,15 @@ function App() {
             <Container fluid>
                 <AppNavbar/>  
                 <Routes>
-                  {/*<Route path="/" element={<Home/>}/>
-                  <Route path="/courses" element={<Courses/>}/>
-                  <Route path="/courses/:courseId" element={<CourseView/>}/>*/}
+                  <Route path="/" element={<Home/>}/>
+                  <Route path="/products" element={<Products/>}/>
+                  <Route path="/products/:productId" element={<ProductView/>}/>
                   <Route path="/register" element={<Register/>}/>
                   <Route path="/login" element={<Login/>}/>
                   <Route path="/logout" element={<Logout/>}/>
                   {/*<Route path="*" element={<Error/>}/>
-                  <Route path="/profile" element={<Profile/>}/>
-                  <Route path="/addCourse" element={<AddCourse/>}/>*/}
+                  <Route path="/profile" element={<Profile/>}/>*/}
+                  <Route path="/addProduct" element={<AddProduct/>}/>
                 </Routes>
             </Container>
         </Router>
