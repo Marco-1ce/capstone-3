@@ -10,7 +10,9 @@ import Login from './pages/Login';
 import Logout from './pages/Logout';
 import Products from './pages/Products';
 import ProductView from './pages/ProductView'
+import Profile from './pages/Profile'
 import Register from './pages/Register';
+import RetrieveUser from './pages/RetrieveUser'
 import './App.css';
 
 import { UserProvider } from './UserContext';
@@ -82,9 +84,10 @@ function App() {
                   <Route path="/register" element={<Register/>}/>
                   <Route path="/login" element={<Login/>}/>
                   <Route path="/logout" element={<Logout/>}/>
-                  {/*<Route path="*" element={<Error/>}/>
-                  <Route path="/profile" element={<Profile/>}/>*/}
+                  {/*<Route path="*" element={<Error/>}/>*/}
+                  <Route path="/profile" element={<Profile/>}/>
                   <Route path="/addProduct" element={<AddProduct/>}/>
+                  <Route path="/allUsers" element={<RetrieveUser/>}/>
                 </Routes>
             </Container>
         </Router>

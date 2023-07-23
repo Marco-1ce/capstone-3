@@ -14,6 +14,8 @@ export default function Register() {
 	const [firstName, setFirstName] = useState("");
 	const [lastName, setLastName] = useState("");
 	const [email, setEmail] = useState("");
+	const [mobileNo, setMobileNo] = useState("");
+	const [address, setAddress] = useState("");
 	const [password, setPassword] = useState("");
 	const [confirmPassword, setConfirmPassword] = useState("");
 
@@ -24,6 +26,8 @@ export default function Register() {
 	console.log(firstName);
 	console.log(lastName);
 	console.log(email);
+	console.log(mobileNo);
+	console.log(address);
 	console.log(password);
 	console.log(confirmPassword);
 
@@ -42,6 +46,8 @@ export default function Register() {
 				firstName: firstName,
 				lastName: lastName,
 				email: email,
+				mobileNo: mobileNo,
+				address: address,
 				password: password
 			})
 		})
@@ -54,6 +60,8 @@ export default function Register() {
 				setFirstName("");
 				setLastName("");
 				setEmail("");
+				setMobileNo("");
+				setAddress("");
 				setPassword("");
 				setConfirmPassword("");
 
@@ -84,7 +92,7 @@ export default function Register() {
 	*/
 	useEffect(() => {
 
-		if((firstName !== "" && lastName !== "" && email !== "" && password !== "" && confirmPassword !== "") && (password === confirmPassword) ) {
+		if((firstName !== "" && lastName !== "" && email !== "" && address !== "" && mobileNo !== "" && password !== "" && confirmPassword !== "") && (password === confirmPassword) && (mobileNo.length === 11)) {
 
 			setIsActive(true)
 		} else {
@@ -92,7 +100,7 @@ export default function Register() {
 			setIsActive(false)
 		}
 
-	}, [firstName, lastName, email, password, confirmPassword])
+	}, [firstName, lastName, email, address, mobileNo, password, confirmPassword])
 
 
 
@@ -125,6 +133,28 @@ export default function Register() {
 				  required
 				  value={lastName}
 				  onChange={e => {setLastName(e.target.value)}}
+				  />
+				</Form.Group>
+
+				<Form.Group className="mb-3" controlId="Last Name">
+				  <Form.Label>Mobile No <span className="text-danger">*</span></Form.Label>
+				  <Form.Control 
+				  type="text" 
+				  placeholder="Enter 11 Digit No." 
+				  required
+				  value={mobileNo}
+				  onChange={e => {setMobileNo(e.target.value)}}
+				  />
+				</Form.Group>
+
+				<Form.Group className="mb-3" controlId="Last Name">
+				  <Form.Label>Address <span className="text-danger">*</span></Form.Label>
+				  <Form.Control 
+				  type="text" 
+				  placeholder="Enter Address" 
+				  required
+				  value={address}
+				  onChange={e => {setAddress(e.target.value)}}
 				  />
 				</Form.Group>
 
