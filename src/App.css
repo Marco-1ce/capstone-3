@@ -11,7 +11,7 @@
 }
 
 .Register-container{
-  max-width: 400px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #ccc;
@@ -80,6 +80,7 @@ p a:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  width: 100%;
 }
 .view-details-button {
   /* Customize the button styles as needed */

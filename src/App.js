@@ -5,6 +5,8 @@ import { Route, Routes } from 'react-router-dom';
 import AppNavbar from './components/AppNavbar';
 
 import AddProduct from './pages/AddProduct'
+import AllOrders from './pages/AllOrders'
+import CartPage from './pages/CartPage'
 import Home from './pages/Home'
 import Login from './pages/Login';
 import Logout from './pages/Logout';
@@ -88,6 +90,8 @@ function App() {
                   <Route path="/profile" element={<Profile/>}/>
                   <Route path="/addProduct" element={<AddProduct/>}/>
                   <Route path="/allUsers" element={<RetrieveUser/>}/>
+                  <Route path="/orders" element={<AllOrders/>}/>
+                  <Route path="/cart" element={<CartPage/>}/>
                 </Routes>
             </Container>
         </Router>

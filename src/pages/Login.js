@@ -120,14 +120,7 @@ export default function Login() {
 			:
 		<Container className="Login-Container">
 		      <Row>
-		        <Col md={6}>
-		          <div className="image-container">
-		            <img src="logo192.png" alt="image"/>
-		          </div>
-		        </Col>
-
-		        
-		        <Col md={6}>
+		        <Col md={12}>
 		          <Form onSubmit={(e) => loginUser(e)}>
 		            <h1 className="my=5 text-center">
 		              <FaUser />
