@@ -110,7 +110,8 @@ const CartPage = () => {
         text: "You have successfully purchased all products in the cart."
       });
 
-      // Optionally, you can update the user context or handle the successful purchase in other ways.
+      setCartItems([]); 
+      setTotalPrice(0); 
     } else {
       Swal.fire({
         title: "Something went wrong",

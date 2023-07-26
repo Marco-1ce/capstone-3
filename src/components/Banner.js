@@ -1,15 +1,22 @@
 import { Button, Row, Col, Carousel } from 'react-bootstrap';
+import { Link } from 'react-router-dom'
 
 export default function Banner() {
 	
 	return (
-			<Row>
-				<Col className="p-5 text-center">
-					<h1>Zuitt Coding Bootcamp</h1>
-					<p>Opportunities for everyone, everywhere.</p>
-					<Button variant="primary">Buy now!</Button>
-				</Col>
-			</Row>
+		<section id="banner-image">
+                <div class="front-bg">
+                    <div class="container">
+                        <h1 class="title">Arm Yourself with Confidence: Your Trusted Gun Shop for Quality Firearms and Accessories!</h1>
+                        <h2 class="subtitle">
+                            Our One-Stop Destination for Firearm Expertise, Safety Education, and Unbeatable Selection.
+                        </h2>
+                        <Link to="/products">
+                        	<Button className="apply-button">Buy now!</Button>
+                        </Link>
+                    </div>
+                </div> 
+            </section>
 			
 		) 
 };

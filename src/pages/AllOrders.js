@@ -23,7 +23,6 @@ export default function Orders() {
 
   useEffect(() => {
     if (!user.id) {
-      // If user is not logged in, navigate to "/products" page
       navigate('/products');
     } else {
       fetchOrders();
