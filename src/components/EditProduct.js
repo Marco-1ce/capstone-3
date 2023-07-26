@@ -86,7 +86,7 @@ export default function EditProduct({product, fetchData}) {
 		<Modal show={showEdit} onHide={closeEdit}>
 			<Form onSubmit={e => editProduct(e, productId)}>
 				<Modal.Header closeButton>
-		          	<Modal.Title>Edit Course</Modal.Title>
+		          	<Modal.Title>Edit Product</Modal.Title>
 		        </Modal.Header>
 
 		        <Modal.Body>
@@ -122,7 +122,7 @@ export default function EditProduct({product, fetchData}) {
 		        </Modal.Body>
 
 		        <Modal.Footer>
-		        	<Button variant="secondary">Close</Button>
+		        	<Button variant="secondary" onClick={closeEdit}>Close</Button>
 		        	<Button variant="success" type="submit">Submit</Button>
 		        </Modal.Footer>
 			</Form>

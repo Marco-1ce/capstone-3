@@ -3,6 +3,7 @@ import { Container } from 'react-bootstrap';
 import { BrowserRouter as Router} from 'react-router-dom';
 import { Route, Routes } from 'react-router-dom';
 import AppNavbar from './components/AppNavbar';
+import Footer from './components/Footer';
 
 import AddProduct from './pages/AddProduct'
 import AllOrders from './pages/AllOrders'
@@ -93,6 +94,7 @@ function App() {
                   <Route path="/orders" element={<AllOrders/>}/>
                   <Route path="/cart" element={<CartPage/>}/>
                 </Routes>
+                <Footer/>
             </Container>
         </Router>
     </UserProvider>

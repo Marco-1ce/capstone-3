@@ -11,19 +11,21 @@ export default function Product(props) {
 
 	return (
 		<Col xs={12} md={breakPoint}>
-			<Card className="cardHighlight">
-				<Card.Body>
-					<Card.Title className="text-center">
-						<Link to={`/products/${_id}`}>{name}</Link>
-					</Card.Title>
-					<Card.Text>{description}</Card.Text>
-				</Card.Body>
+		      <Card className="featuredProduct-cardHighlight">
+		        <Card.Body>
+		          <Card.Title className="featuredProduct-title">
+		            <Link to={`/products/${_id}`}>{name}</Link>
+		          </Card.Title>
+		          <Card.Text className="featuredProduct-text">{description}</Card.Text>
+		        </Card.Body>
 
-				<Card.Footer>
-					<h5 className="text-center">₱ {price}</h5>
-					<Link to={`/products/${_id}`} className="btn btn-primary d-block">Details</Link>
-				</Card.Footer>
-			</Card>
-		</Col>
+		        <Card.Footer>
+		          <h5 className="featuredProduct-price">₱ {price}</h5>
+		          <Link to={`/products/${_id}`} className="featuredProduct-btn d-block">
+		            Details
+		          </Link>
+		        </Card.Footer>
+		      </Card>
+		    </Col>
 	)
 }

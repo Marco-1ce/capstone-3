@@ -118,6 +118,7 @@ export default function Login() {
 		(user.id !== null) ?
 			<Navigate to="/products" />
 			:
+	<body id="Login-body">
 		<Container className="Login-Container">
 		      <Row>
 		        <Col md={12}>
@@ -168,6 +169,6 @@ export default function Login() {
 		        </Col>
 		      </Row>
 		    </Container>
-
+	</body>
 	)
 }

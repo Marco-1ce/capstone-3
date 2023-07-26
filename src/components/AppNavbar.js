@@ -17,12 +17,12 @@ export default function AppNavbar() {
 
 	return (
 
-		<Navbar expand="lg" className="bg-body-tertiary">
+		<Navbar expand="lg" className="Navbar-Bg">
 		      <Container fluid>
-		        <Navbar.Brand as={Link} to="/">Marco</Navbar.Brand>
+		        <Navbar.Brand as={Link} to="/" className="Nav-Logo"><span className="text-danger">M</span>arco</Navbar.Brand>
 		        <Navbar.Toggle aria-controls="basic-navbar-nav" />
 		        <Navbar.Collapse id="basic-navbar-nav">
-		          <Nav className="ms-auto">
+		          <Nav className="Nav-link ms-auto">
 		            <Nav.Link as={NavLink} to="/">Home</Nav.Link>
 		            <Nav.Link as={NavLink} to="/products">Product</Nav.Link>
 		            

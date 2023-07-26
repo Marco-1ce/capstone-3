@@ -5,37 +5,62 @@
   box-shadow: border-box;
 }
 
+/* NAVBAR CSS */
+.Navbar-Bg {
+  background-color: #fea218;
+  padding: 18px;
+  position: relative;
+}
+.Nav-link a{
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+}
+.Nav-Logo {
+  font-weight: 900;
+  font-size: 30px;
+}
+/* NAVBAR CSS */
+
+
+
+
+
 /* BANNER CSS */
 #banner-image {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
-                url("https://cdn.wallpapersafari.com/53/7/Wy4vVX.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, .7)),
+                url("https://vignette2.wikia.nocookie.net/creative-weaponry/images/3/3d/Weap_Wall_Render_01-1-.jpg/revision/latest?cb=20130726143156");
     background-repeat: no-repeat;   
     background-size: cover;
     background-position: center;
     padding-top: 200px;
     padding-bottom: 150px;
     color: white;
+    margin-top: 7px;
 }
-.container {
+.banner-container {
     text-align: center;
     position: relative;
 }
-.title {
-    font-family: 'Zilla Slab', serif;
-    font-size: 3.5rem;
+.banner-title {
+    font-size: 3rem;
     font-weight: bold;
-}
+    margin-left: 12rem;
+    margin-right: 12rem;
+    margin-bottom: 3rem;
 
-.subtitle {
-    font-size: 1.7rem;
+}
+.banner-subtitle {
+    font-size: 1.5rem;
     font-weight: lighter;
     margin-left: auto;
     margin-top: 10px;
+    margin-bottom: 2rem;
 }
 
-.apply-button {
+.banner-apply-button {
     margin-top: 10px;
-    background-color: #0d6efd;
+    background-color: #fea218;
     color: white;
     padding: 10px;
     width: 9rem;
@@ -44,21 +69,163 @@
     border-radius: 25px;
 
 }
+/* CSS for Tablet Screens */
+@media (max-width: 768px) {
+  .banner-container {
+    padding: 50px 0;
+  }
+
+  .banner-title {
+    font-size: 32px;
+    margin: 0;
+  }
+
+  .banner-subtitle {
+    font-size: 20px;
+  }
+
+  .banner-apply-button {
+    padding: 8px 16px;
+    font-size: 16px;
+  }
+}
+
+/* CSS for Small Mobile Screens */
+@media (max-width: 480px) {
+  .banner-container {
+    padding: 30px 0;
+  }
+
+  .banner-title {
+    font-size: 24px;
+    margin: 0;
+  }
+
+  .banner-subtitle {
+    font-size: 16px;
+  }
+
+  .banner-apply-button {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+}
 /* BANNER CSS */
 
 
 
-
-
-
-.cardHighlight {
-  min-height: 100%;
-  border: 1px solid #ccc;
+/* Featured Products Css */
+.featuredProduct-cardHighlight {
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-left: 7px;
-  margin-right: 7px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  min-height: 100%;
+  border: 1px solid #ccc;;
+  margin-left: 12px;
+  margin-right: 12px;
 }
+.featuredProduct-title{
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+}
+.featuredProduct-btn{
+  background-color: #fea218;
+  text-align: center;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+.featuredProduct-title a {
+  color: #333;
+  text-decoration: none;
+}
+.featuredProduct-price {
+  text-align: center;
+  color: #42ba96;
+}
+.featuredProduct-text{
+  font-size: 18px;
+  color: #666;
+}
+/* Featured Products Css */
+
+
+/* UserView.css */
+.product-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  margin-top: 30px;
+}
+.product-card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  border: none; 
+  padding: 10px;
+  margin: 15px;
+  width: 300px;
+}
+.product-title {
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+.product-description {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.product-price {
+  font-size: 18px;
+  color: green;
+  margin-bottom: 10px;
+}
+.view-details-button {
+  /* Customize the button styles as needed */
+  background-color: #fea218;
+  color: #fff;
+  font-weight: bold;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.view-details-button:hover {
+  background-color: #0056b3;
+}
+.button-container {
+  text-align: center; 
+}
+/* UserView.css */
+
+
+/* LOGIN.css */
+.Login-Container{
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+/*#Login-body {
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}*/
+/* LOGIN.css */
+
+
 
 .Register-container{
   max-width: 900px;
@@ -88,69 +255,20 @@ p a:hover {
   text-decoration: underline;
 }
 
-.Login-Container{
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
+
+
+
+
+
+/*.cardHighlight {
+  min-height: 100%;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  margin-top: 2rem;
-}
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-left: 7px;
+  margin-right: 7px;
+}*/
 
-.product-card {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-  border: none; 
-  padding: 10px;
-  margin: 10px;
-  width: 250px;
-  display: inline-block;
-
-}
-
-.product-title {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.product-description {
-  margin-bottom: 10px;
-}
-
-.product-price {
-  font-size: 18px;
-  color: green;
-  margin-bottom: 10px;
-}
-
-
-
-/* UserView.css */
-
-.product-cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
-}
-.view-details-button {
-  /* Customize the button styles as needed */
-  background-color: #007bff;
-  color: #fff;
-  font-weight: bold;
-  padding: 8px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.view-details-button:hover {
-  background-color: #0056b3;
-}
-.button-container {
-  text-align: center; /* Align the button to the center */
-}
 
 /* CSS for CartPage component */
 .cart-container {
@@ -207,5 +325,9 @@ p a:hover {
     margin: 20px auto;
   }
 }
+
+
+
+
 
 

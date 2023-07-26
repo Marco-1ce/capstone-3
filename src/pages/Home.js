@@ -4,6 +4,7 @@ import FeaturedProducts from '../components/FeaturedProducts';
 
 
 
+
 export default function Home() {
 
 	return (
@@ -11,6 +12,7 @@ export default function Home() {
 			<Banner/>
 			<FeaturedProducts/>
 			<Highlights/>
+			
 		</>
 	)
 

@@ -5,7 +5,7 @@ export default function Highlights() {
 
 	return (
 
-		<Row className="mt-3 mb-3">
+		<Row className="Highlights-row mt-5 mb-3">
 			<Col xs={12} md={4}>
 				<Card className="cardHighlight p-3">
 				      <Card.Body>
