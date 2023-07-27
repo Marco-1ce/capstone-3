@@ -12,7 +12,7 @@ export default function Products() {
 
   // Create a function to fetch all products
   const fetchData = () => {
-    fetch("http://localhost:4000/products/all")
+    fetch(`${ process.env.REACT_APP_API_URL }/products/all`)
       .then(res => res.json())
       .then(data => {
         console.log(data);

@@ -15,7 +15,7 @@ export default function EditProduct({product, fetchData}) {
 	const openEdit = (productId) => {
 
 		// to get the actual data from the form
-		fetch(`http://localhost:4000/products/${productId}`)
+		fetch(`${ process.env.REACT_APP_API_URL }/products/${productId}`)
 		.then(res => res.json())
 		.then(data => {
 

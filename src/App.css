@@ -1,4 +1,4 @@
-/*CSS Reset Rule*/
+CSS Reset Rule*/
 *{
   margin: 0;
   padding: 0;
@@ -48,7 +48,6 @@
     margin-left: 12rem;
     margin-right: 12rem;
     margin-bottom: 3rem;
-
 }
 .banner-subtitle {
     font-size: 1.5rem;
@@ -113,7 +112,7 @@
 /* BANNER CSS */
 
 
-
+/* UserView.css */
 /* Featured Products Css */
 .featuredProduct-cardHighlight {
   border-radius: 8px;
@@ -124,11 +123,20 @@
   border: 1px solid #ccc;;
   margin-left: 12px;
   margin-right: 12px;
+  margin-top: 12px;
+}
+.featuredProduct-cardHighlight:hover{
+  transform: translateY(-5px);
+  transition: transform 0.2s ease-in-out;
 }
 .featuredProduct-title{
   text-align: center;
   font-size: 28px;
   font-weight: bold;
+}
+.featuredProduct-title a {
+  color: #333;
+  text-decoration: none;
 }
 .featuredProduct-btn{
   background-color: #fea218;
@@ -139,102 +147,51 @@
   padding: 8px 16px;
   text-decoration: none;
 }
-.featuredProduct-title a {
-  color: #333;
-  text-decoration: none;
-}
 .featuredProduct-price {
   text-align: center;
-  color: #42ba96;
+  color: green;
 }
 .featuredProduct-text{
   font-size: 18px;
   color: #666;
 }
-/* Featured Products Css */
-
-
+.cardHighlight:hover{
+  transform: translateY(-5px);
+  transition: transform 0.2s ease-in-out;
+}
+/* Featured Products Css  */
 /* UserView.css */
-.product-cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
-  margin-top: 30px;
-}
-.product-card {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-  border: none; 
-  padding: 10px;
-  margin: 15px;
-  width: 300px;
-}
-.product-title {
-  font-weight: bold;
-  font-size: 30px;
-  margin-bottom: 5px;
-}
-.product-description {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-.product-price {
-  font-size: 18px;
-  color: green;
-  margin-bottom: 10px;
-}
-.view-details-button {
-  /* Customize the button styles as needed */
-  background-color: #fea218;
-  color: #fff;
-  font-weight: bold;
-  padding: 8px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-.view-details-button:hover {
-  background-color: #0056b3;
-}
-.button-container {
-  text-align: center; 
-}
-/* UserView.css */
+
 
 
 /* LOGIN.css */
 .Login-Container{
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 187px 75px rgba(0, 0, 0, 0.01), 0px 105px 63px rgba(0, 0, 0, 0.05), 0px 47px 47px rgba(0, 0, 0, 0.09), 0px 12px 26px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
   margin-top: 2rem;
 }
-/*#Login-body {
-
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}*/
+#Login-body {
+  height: 80vh;
+}
+.login-title{
+  font-weight: 700;
+  text-align: center;
+}
 /* LOGIN.css */
 
 
-
+/* REGISTER CSS */
 .Register-container{
   max-width: 900px;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  margin-top: 2rem;
+  box-shadow: 0px 187px 75px rgba(0, 0, 0, 0.01), 0px 105px 63px rgba(0, 0, 0, 0.05), 0px 47px 47px rgba(0, 0, 0, 0.09), 0px 12px 26px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);  margin-top: 2rem;
 }
 
 Form label{
@@ -254,27 +211,20 @@ p a {
 p a:hover {
   text-decoration: underline;
 }
+/* REGISTER CSS */
 
-
-
-
-
-
-/*.cardHighlight {
-  min-height: 100%;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-left: 7px;
-  margin-right: 7px;
-}*/
 
 
 /* CSS for CartPage component */
 .cart-container {
   margin: 20px;
+  min-height: 100vh;
 }
-
+.cart-head{
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
 .table {
   width: 100%;
   border-collapse: collapse;
@@ -282,22 +232,27 @@ p a:hover {
 
 .table th,
 .table td {
-  padding: 10px;
+  padding: 20px;
   text-align: center;
 }
 
 .table th {
-  background-color: #f2f2f2;
+  background-color: #3f3f3f;
   font-weight: bold;
+  color: #fea218;
+  border: ;
 }
 
 .table td {
   border: 1px solid #ccc;
+  font-weight: 600;
+  color: green;
 }
 
 .total-price {
   font-weight: bold;
   text-align: right;
+
 }
 
 .remove-button {
@@ -321,13 +276,209 @@ p a:hover {
 /* Optional: Center the cart table on the page */
 @media (min-width: 768px) {
   .cart-container {
-    max-width: 600px;
+    max-width: 700px;
     margin: 20px auto;
   }
 }
+/* CSS for CartPage component */
 
 
 
+/* ORDER USER VIEW */
+.order-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.order-card:hover {
+  transform: translateY(-5px);
+  transition: transform 0.2s ease-in-out;
+}
+.order-card .card-header {
+  background-color: #3f3f3f;
+  color: #fea218;
+  font-weight: bold;
+  text-align: center;
+  padding: 0.5rem;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.order-card .card-body {
+  padding: 1.5rem;
+}
+.order-card ul {
+  list-style: none;
+  padding: 0;
+}
+.order-card ul li {
+  padding: 0.5rem 0;
+}
+.order-card ul li p {
+  margin: 0;
+}
+.order-card p {
+  font-size: 15px;
+}
+.order-card h5 {
+  margin-bottom: 0;
+}
+.order-card h6 {
+  margin-bottom: 1rem;
+}
+.order-value-price{
+  color: green;
+  font-weight: bold;
+}
+/* ORDER USER VIEW */
 
 
 
+/* ORDER ADMIN VIEW */
+.admin-orders-container {
+  margin-top: 50px;
+}
+.admin-orders-heading {
+  text-align: center;
+}
+.admin-orders-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+.admin-orders-card:hover{
+  transform: translateY(-5px);
+  transition: transform 0.2s ease-in-out;
+}
+.admin-orders-card-header {
+  background-color: #3f3f3f;
+  color: #fea218;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+.admin-orders-card-header h5 {
+  margin: 0;
+}
+.admin-orders-card-body {
+  padding: 15px;
+}
+.admin-orders-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.admin-orders-list-item {
+  margin-bottom: 10px;
+}
+.admin-orders-list-item p {
+  margin: 0;
+}
+.admin-orders-list-item p:last-child {
+  font-weight: bold;
+}
+.admin-orders-paragraph {
+  margin: 0;
+  font-weight: bold;
+}
+.admin-oder-amount{
+  color: green;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .admin-orders-card-columns {
+    column-count: 1;
+  }
+}
+/* ORDER ADMIN VIEW 
+
+
+/* PROFILE CSS */
+.profile-bg {
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)),
+                url("https://i.pinimg.com/originals/11/de/48/11de483cc78fb30f82bb94d06f7274ef.png");
+  background-repeat: no-repeat;   
+  background-size: cover;
+  background-position: center;
+  padding: 100px;
+  color: white;
+  margin-top: 7px;
+  z-index: -1;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+.profile-card {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card img {
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.profile-card .card-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.profile-card .card-text {
+  font-size: 16px;
+}
+
+.profile-card .list-group-item {
+  font-size: 14px;
+}
+
+.profile-card .card-link {
+  font-size: 14px;
+  color: blue;
+  text-decoration: none;
+}
+
+.profile-card .card-link:hover {
+  text-decoration: underline;
+}
+
+
+.profile-reset-password {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: -80px;
+  background-color: white; /* Add a background color to avoid seeing through the overlay */
+  padding: 20px; /* Add padding to the section to create some space */
+}
+.profile-edit-details{
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 50px;
+  background-color: white; /* Add a background color to avoid seeing through the overlay */
+  padding: 20px; /* Add padding to the section to create some space */
+}
+
+.footer {
+  background-color: #343a40;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 14px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+.footer a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}

@@ -13,7 +13,7 @@ export default function UserData({ usersData, fetchData }) {
 
   const updateUserToAdmin = async (userId) => {
     try {
-      const response = await fetch(`http://localhost:4000/users/updateAdmin/${userId}`, {
+      const response = await fetch(`${ process.env.REACT_APP_API_URL }/users/updateAdmin/${userId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

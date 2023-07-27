@@ -22,7 +22,7 @@ export default function Login() {
 			// Prevent the page redirection via form submission
 			e.preventDefault();
 
-			fetch("http://localhost:4000/users/login", {
+			fetch(`${ process.env.REACT_APP_API_URL }/users/login`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json"
@@ -38,21 +38,12 @@ export default function Login() {
 
 				if(data.access) {
 
-					// set the token of the authenticated user in he local storage
-					// Syntax:
-						// localStorage.setItem("propertyName", value)
+
 					localStorage.setItem("token", data.access);
 
-					// Sets the global user state to have the properties obtained frrom localStorage.
-					// setUser({
-					// 	access: localStorage.getItem("token")
-					// })
 
-					// We will invoke the fuction for retrieving the user details
 					retrieveUserDetails(data.access)
 
-
-					// alert("Thankyou for logging in!")
 					Swal.fire({
 						title: "Login Successful",
 						icon: "success",
@@ -61,7 +52,6 @@ export default function Login() {
 
 				} else {
 
-					// alert("Unsuccessful Login")
 					Swal.fire({
 						title: "Authentication Failed",
 						icon: "error",
@@ -77,9 +67,7 @@ export default function Login() {
 
 		const retrieveUserDetails = (token) => {
 
-			// The token will be sent as part of the request's header information.
-			// We put "Bearer" in front of the token to follow the implementation standards for JWTs.
-			fetch('http://localhost:4000/users/details', {
+			fetch(`${ process.env.REACT_APP_API_URL }/users/details`, {
 				headers:{
 					Authorization: `Bearer ${token}`
 				}
@@ -109,10 +97,6 @@ export default function Login() {
 		}, [email, password]);	
 
 
-
-
-
-
 	return(
 
 		(user.id !== null) ?
@@ -123,6 +107,7 @@ export default function Login() {
 		      <Row>
 		        <Col md={12}>
 		          <Form onSubmit={(e) => loginUser(e)}>
+		          <h1 className="login-title">Login Account</h1>
 		            <h1 className="my=5 text-center">
 		              <FaUser />
 		            </h1>

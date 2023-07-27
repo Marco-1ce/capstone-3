@@ -15,39 +15,47 @@ export default function AdminView({ productsData, fetchData }) {
 	return (
 
 	<Container>
-		<h1 className="text-center my-4">Admin Dashboard</h1>
-			<Row>
-				<Col>
-					<Table striped bordered hover responsive>
-					      <thead>
-					        <tr className="text-center">
-					          <th>ID</th>
-					          <th>Name</th>
-					          <th>Description</th>
-					          <th>Price</th>
-					          <th>Availability</th>
-					          <th colSpan="2">Actions</th>
-					        </tr>
-					      </thead>
-					      <tbody>
-					      	{products.map((product) => (
-						        <tr key={product._id}>
-						          <td>{product._id}</td>
-						          <td>{product.name}</td>
-						          <td>{product.description}</td>
-						          <td>{product.price}</td>
-						          <td className={product.isActive ? 'text-success' : 'text-danger'}>
-						                          {product.isActive ? 'Available' : 'Unavailable'}
-						                        </td>
-						          <td><EditProduct product={product._id} fetchData={fetchData}/></td>
-						          <td><ArchiveProduct productId={product._id} isActive={product.isActive} fetchData={fetchData}/></td>
-						        </tr>
-						    ))}
-					      </tbody>
-					    </Table>
-				</Col>
-			</Row>
-	</Container>
+      <h1 className="text-center my-4">Admin Dashboard</h1>
+      <Row>
+        <Col>
+          <div className="table-responsive">
+            <div style={{ maxHeight: '600px', overflow: 'auto' }}>
+              <Table striped bordered hover>
+                <thead>
+                  <tr className="text-center">
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Availability</th>
+                    <th colSpan="2">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {products.map((product) => (
+                    <tr key={product._id}>
+                      <td>{product._id}</td>
+                      <td>{product.name}</td>
+                      <td>{product.description}</td>
+                      <td>{product.price}</td>
+                      <td className={product.isActive ? 'text-success' : 'text-danger'}>
+                        {product.isActive ? 'Available' : 'Unavailable'}
+                      </td>
+                      <td>
+                        <EditProduct product={product._id} fetchData={fetchData} />
+                      </td>
+                      <td>
+                        <ArchiveProduct productId={product._id} isActive={product.isActive} fetchData={fetchData} />
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </Table>
+            </div>
+          </div>
+        </Col>
+      </Row>
+    </Container>
 
 	)
 } 	

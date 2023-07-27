@@ -11,7 +11,7 @@ export default function Users() {
 
   // Create a function to fetch all users
   const fetchData = () => {
-    fetch("http://localhost:4000/users/getallusers")
+    fetch(`${ process.env.REACT_APP_API_URL }/users/getallusers`)
       .then(res => res.json())
       .then(data => {
         console.log(data);

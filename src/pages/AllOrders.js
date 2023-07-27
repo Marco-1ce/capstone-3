@@ -11,7 +11,7 @@ export default function Orders() {
   const [orders, setOrders] = useState([]);
 
   const fetchOrders = () => {
-    fetch("http://localhost:4000/orders/all-orders")
+    fetch(`${ process.env.REACT_APP_API_URL }/orders/all-orders`)
       .then(res => res.json())
       .then(data => {
         setOrders(data.orders);

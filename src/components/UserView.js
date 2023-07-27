@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
+import { CardGroup } from 'react-bootstrap';
 import ProductCard from '../components/ProductCard';
+import ProductSearch from './ProductSearch';
 
 export default function UserView({productsData}) {
 
@@ -25,5 +27,12 @@ export default function UserView({productsData}) {
 
 	return(
 
-		<div className="product-cards-container">{products}</div>	)
+		<>
+		  <ProductSearch/>
+		  <h2 className="text-center my-5 text-dark">PRODUCTS</h2>
+		  <CardGroup className="justify-content-center">
+		    {products}
+		  </CardGroup>
+		</>	
+	)
 }

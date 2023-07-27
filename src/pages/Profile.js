@@ -1,8 +1,10 @@
 import {useState,useEffect, useContext} from 'react';
-import {Row, Col} from 'react-bootstrap';
+import {Row, Col, Container, Card, ListGroup} from 'react-bootstrap';
 import { Navigate } from 'react-router-dom';
 import UserContext from '../UserContext';
 import ResetPassword from '../components/ResetPassword';
+import EditProfile from '../components/EditProfile';
+
 
 export default function Profile(){
 
@@ -12,7 +14,7 @@ export default function Profile(){
 
     useEffect(()=>{
 
-        fetch(`http://localhost:4000/users/details`, {
+        fetch(`${ process.env.REACT_APP_API_URL }/users/details`, {
       headers: {
         Authorization: `Bearer ${ localStorage.getItem('token') }`
       }
@@ -38,26 +40,54 @@ export default function Profile(){
         <Navigate to="/products" />
         :
         <>
-            <Row>
-              <Col className="p-5 bg-primary text-white">
-                <h1 className="my-5 ">Profile</h1>
-                        {/* <h2 className="mt-3">James Dela Cruz</h2> */}
-                <h2 className="mt-3">{`${details.firstName} ${details.lastName}`}</h2>
-                <hr />
-                <h4>Contacts</h4>
-                <ul>
-                  <li>Email: {details.email}</li>
-                  <li>Mobile No: {details.mobileNo}</li>
-                  <li>Address: {details.address}</li>
-                </ul>
-              </Col>
-            </Row>
+        <section className="profile-bg">
+                <Row>
+                  <Col className="p-5 text-white">
+                    <h1 className="my-5 text-center">Profile</h1>
+                    <Card className="profile-card">
+                      <Card.Img
+                        variant="top"
+                        src="https://sm.ign.com/ign_nordic/cover/a/avatar-gen/avatar-generations_prsz.jpg"
+                      />
+                      <Card.Body>
+                        <Card.Title>{`${details.firstName} ${details.lastName}`}</Card.Title>
+                        <Card.Text>
+                          Some quick example text to build on the card title and make up the bulk of
+                          the card's content.
+                        </Card.Text>
+                      </Card.Body>
+                      <ListGroup className="list-group-flush">
+                        <ListGroup.Item>Email: {details.email}</ListGroup.Item>
+                        <ListGroup.Item>Mobile No: {details.mobileNo}</ListGroup.Item>
+                        <ListGroup.Item>Address: {details.address}</ListGroup.Item>
+                      </ListGroup>
+                      <Card.Body>
+                        <Card.Link href="#">Card Link</Card.Link>
+                        <Card.Link href="#">Another Link</Card.Link>
+                      </Card.Body>
+                    </Card>
+                  </Col>
+                </Row>
+        </section>
 
-            <Row className="pt-4 mt-4">
-                <Col>
-                    <ResetPassword/>
-                </Col>
-            </Row>
+        <section>
+            <Container className="profile-reset-password">
+              <Row className="pt-4 mt-4">
+                  <Col lg={12}>
+                      <ResetPassword/>
+                  </Col>
+              </Row>
+            </Container>
+        </section>
+        <section>
+            <Container className="profile-edit-details">
+              <Row className="pt-4 mt-4">
+                  <Col lg={12}>
+                      <EditProfile/>
+                  </Col>
+              </Row>
+            </Container>
+        </section>
         </>
 
   )

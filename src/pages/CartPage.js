@@ -1,13 +1,16 @@
 import { useEffect, useState, useContext } from 'react';
 import Swal from 'sweetalert2'
 import UserContext from '../UserContext';
-import { Navigate} from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const CartPage = () => {
 
   const { user } = useContext(UserContext);
   const [cartItems, setCartItems] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
+
+  const [isPurchaseSuccess, setIsPurchaseSuccess] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Fetch cart items from the backend API
@@ -27,7 +30,6 @@ const CartPage = () => {
     })
     .catch(error => {
       console.error(error);
-      // Handle error
     });
   }, []);
 
@@ -77,12 +79,16 @@ const CartPage = () => {
           )
         );
       } else {
-        // Handle error or show an error message
+         Swal.fire({
+           title: "Something went wrong",
+           icon: "error",
+           text: "Please try again."
+         });
       }
     })
     .catch(error => {
       console.error(error);
-      // Handle error or show an error message
+      
     });
   };
 
@@ -110,8 +116,10 @@ const CartPage = () => {
         text: "You have successfully purchased all products in the cart."
       });
 
+      setIsPurchaseSuccess(true);
       setCartItems([]); 
       setTotalPrice(0); 
+
     } else {
       Swal.fire({
         title: "Something went wrong",
@@ -130,7 +138,11 @@ const CartPage = () => {
   });
 };
 
-
+useEffect(() => {
+    if (isPurchaseSuccess) {
+      navigate('/'); 
+    }
+  }, [isPurchaseSuccess, navigate]);
 
 
   return (
@@ -139,7 +151,7 @@ const CartPage = () => {
       <Navigate to="/products" />
       :
     <div className="cart-container">
-          <h2>Your Cart</h2>
+          <h2 className="cart-head">My Cart</h2>
           <table className="table">
             <thead>
               <tr>
@@ -163,8 +175,8 @@ const CartPage = () => {
                       onChange={(e) => handleChangeQuantity(item.productId, parseInt(e.target.value))}
                     />
                     </td>
-                  <td>{item.price}</td>
-                  <td>{item.subtotal}</td>
+                  <td>₱{item.price}</td>
+                  <td>₱{item.subtotal}</td>
                   <td>
                     <button className="btn btn-danger" onClick={() => handleRemoveItem(item.productId)}>
                       Remove
@@ -181,7 +193,7 @@ const CartPage = () => {
                       Checkout
                     </button>
                 </td>
-                <td colSpan="2"> Total Price: {totalPrice}</td>
+                <td colSpan="2"> Total Price: ₱{totalPrice}</td>
               </tr>
             </tfoot>
           </table>
